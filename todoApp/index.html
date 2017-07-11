@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="scotchApp">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- SCROLLS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="js/jquery.min.js"></script>
+
+  <script src="js/timedropper.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/timedropper.css">
+
+  <script src="js/datedropper.js"></script>
+  <link href="css/datedropper.css" rel="stylesheet" type="text/css" />
+
+  <!-- SPELLS -->
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-route.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<!-- define angular controller -->
+<body ng-controller="mainController">
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Todo App</a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+        <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+        <li><a href="#plan"><i class="fa fa-car"></i> Plan</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="main" >
+
+    <!-- angular templating -->
+		<!-- this is where content will be injected -->
+    <div ng-view></div>
+    
+  </div>
+
+  <footer class="text-center panel-footer">
+    <div class="col-md-12">
+      <ul class="social-network social-circle">
+        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<div class="jumbotron vertical-center">
+	<div class="wrapper col-md-10 ">
+		<h1>About Page</h1>
+
+		<p>Đây là 1 trang single page application, nó có chức năng gần giống như 1 ứng dụng desktop.<br/>
+			Trong quá trình làm việc, tôi nhận ra cần có một công cụ để ghi lại những mục tiêu mà tôi hướng tới, ghim nó vào đây và theo dõi chúng mỗi ngày.<br/>
+			Để có thể sử dụng trang web này, mọi người cần đăng nhập để ứng dụng có thể xác định và lưu trữ công việc theo tên người sử dụng.<br/>
+			Trang web có những chức năng chính như: <br/>
+		<ul>
+			<li>Liệt kê danh sách công việc trong ngày</li>
+			<li>Thông báo những công việc đã được hoàn tât</li>
+			<li>Loại bỏ công việc quá hạn, hay không còn quan trọng</li>
+			<li>Thêm mới công việc</li>
+		</ul>
+		</p>
+		<h2>Giới thiệu tác giả</h2>
+		<ul>
+			<li>Tên: {{ about.name }}</li>
+			<li>Tuổi: {{ about.age }}</li>
+			<li>Quê Quán: {{about.address.streetAddress}}, {{about.address.city}}, {{about.address.country}}</li>
+			<li>Hotline: {{about.phoneNumber}}</li>
+			<li>Email: {{about.email}}</li>
+			<li>Twitter: {{about.twitter}}</li>
+			<li>Skill:
+				<ul ng-repeat="x in about.skill" >
+					<li>{{x.name}}: {{x.tools}}</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>

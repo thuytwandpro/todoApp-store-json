@@ -1,0 +1,26 @@
+{
+  "name": "Quang Rô",
+  "age": 21,
+  "address": {
+    "streetAddress": "Tam Tiến, Núi Thành",
+    "city": "Quảng Nam",
+    "country": "Việt Nam"
+  },
+  "phoneNumber":"84-1685-191-638",
+  "email": "thuytwandpro@gmail.com",
+  "twitter": "twitter/@thuytwandpro",
+  "skill": [
+    {
+      "name": "Web design",
+      "tools":"Photoshop, Adobe Illustrator"
+    },
+    {
+      "name": "Web develop",
+      "tools":"Html, Css, JavaScript"
+    },
+    {
+      "name": "Full-Stack",
+      "tools":"M.E.A.N"
+    }
+  ]
+}

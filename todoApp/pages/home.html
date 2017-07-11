@@ -1,0 +1,91 @@
+<div class="jumbotron ">
+	<h1>Home Page</h1>
+
+	<div id="processdata">
+		<div >
+			<input type="file" id="file" style="visibility: hidden"/>
+			<div id="filename">open file name:{{ fileName }}</div>
+			<button class="btn btn-primary" ng-click="openFileDialog()">Import Data</button>
+
+			<button ng-click="show()" class="btn btn-danger">show</button>
+		</div>
+
+		<div id="create">
+			<h3>Chi Tiết Bản Lưu</h3>
+			<h4>Ngày Tạo: {{list.datecr}}</h4>
+			<h4 id="right">Thời Gian: {{list.timecr}}</h4>
+		</div>
+	</div>
+
+	<table class="table"  >
+		<thead>
+		<tr >
+			<th>STT</th>
+			<th>Tên Việc Làm</th>
+			<th>Ngày Tháng</th>
+			<th>Thời Gian</th>
+			<th>Hoàn Thành</th>
+			<th>Xóa</th>
+		</tr>
+		</thead>
+		<tbody ng-repeat="x in list.array track by $index">
+		<tr ng-if="x.state != '1' ">
+			<td>{{indexOf(x)}}</td>
+			<td>{{x.name}}</td>
+			<td >{{x.date}}</td>
+			<td >{{x.time}}</td>
+			<td>
+				<button class="btn btn-default"  ng-click="changecolor(x)">
+					<input type="checkbox"  hidden/>
+					<span>Chưa Hoàn Thành</span>
+				</button>
+			</td>
+			<td><button type="button " class="btn btn-danger" ng-click="todoDel(x)">
+				<span><i class="fa fa-times" aria-hidden="true"></i></span> Xóa</button>
+			</td>
+		</tr>
+		<tr ng-if="x.state == '1' ">
+			<td>{{indexOf(x)}}</td>
+			<td >{{x.name}}</td>
+			<td >{{x.date}}</td>
+			<td >{{x.time}}</td>
+			<td>
+				<button class="btn btn-success"  ng-click="changecolor(x)">
+					<input type="checkbox"  hidden/>
+					<span><i class="fa fa-check"  aria-hidden="true" ></i> Đã Hoàn Thành</span>
+				</button>
+			</td>
+			<td><button type="button " class="btn btn-danger" ng-click="todoDel(x)">
+				<span><i class="fa fa-times" aria-hidden="true"></i></span> Xóa</button>
+			</td>
+		</tr>
+		</tbody>
+		<tfoot>
+		<tr >
+			<th></th>
+			<th ><input type="text"  id="name" class="form-control center" /></th>
+			<th><input type="button" id="date" class="btn btn-primary"/></th>
+			<th ><input type="button" id="alarm" class="btn btn-primary"/></th>
+			<th colspan="2"><input type="button" ng-click="todoAdd()" class="btn btn-default" value="Thêm mới"></th></th>
+		</tr>
+		</tfoot>
+	</table>
+	<div>
+		<button class="btn btn-primary" ng-click="output()">Print</button>
+	</div>
+</div>
+<script>
+    var test = {};
+    function add(){
+        var name = document.getElementById("name").value;
+        var date = document.getElementById("date").value;
+        var time = document.getElementById("alarm").value;
+
+        test.name = name;
+        test.date = date;
+        test.time = time;
+    };
+
+    $( "#alarm" ).timeDropper();
+    $("#date").dateDropper();
+</script>
